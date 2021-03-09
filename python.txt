@@ -1,0 +1,352 @@
+﻿python 存储的文件名.py    eg；hello_world.py
+linux 环境下运行python 文件命令： python  hello_world.py
+
+1、输出：
+print("hello world")
+
+2、一些运算符：
+    1、 除 / 为浮点数
+    2、 除 // 整除运算   3//2 = 1
+    3、 求余 %      10%3=1
+    4、 乘法 *
+    5、 幂此方 **   2**3=8   （-2）**2=4
+        但一般使用的是 pow(2,3)      >>8
+    6、绝对值 abs()   
+    7、math.floor(32.9)  取整   
+3、x=3 是赋值
+   ==是相等
+名称x（标识符），只能由字母、数字、下划线构成，不能以数字打头
+4、输入：
+input("what is you name:")
+eg:
+x=input（"x:"）
+y=input("y:")
+print(int(x),int(y))
+
+5、if 1==2: print('yes')
+>>
+   if 1==1: print('yes')
+>> yes
+
+6、import math
+(模块,可以导入拓展python功能)
+（1）需要些模块名
+eg ：
+import math
+math.floor(32.9)
+>> 32 
+（2）不写模块名：
+from math import floor
+floor（32.9）
+>>32
+
+6、# 符号是讲整行注释
+
+7、拼接字符串 
+eg：
+x="嗨"
+y="你好"
+c=x+y
+print（c）
+>>嗨你好
+
+
+8、\n 换行
+9、str :以合理的方式将值转换为用户能够看懂的字符串
+
+在Python 3中，所有的字符串都是Unicode字符串
+
+10、因为python 是读一行的数据，如果想换行可使用 \
+eg： 
+ 1+2+3\
+ +4+5
+ >> 15
+
+print\
+("hello world")
+
+11、如果想使用原始字符，通过加r
+>>> print(r'C:\nowhere')
+C:\nowhere 
+
+
+二：数据结构
+1、列表,元组
+
+y=[wang,32]
+x=c
+a=[x,y]
+
+>>[[wang,32],[wang,32]]
+
+2、索引
+x='sdjlfkjsdfj'
+x[0]
+>>s
+x[-1]
+>>j
+
+3、切片：访问特定范围内的元素,使用方法是第一个索引指位置，第二个索引指向位置-1
+eg:
+x=woshizuimeide 
+x[3:6]
+>>hiz
+
+取特定字符到最后的数值
+x[-3：]
+>>ide
+4、布长：使一个数据到下一个数据，移动步数
+
+
+5、in
+datebas=[[wangrong,123],[wangrongwei,456],[wangwei,789]]
+tablename=input('input you tablename:')
+pin=input('input pin:')
+if[tablename,pin] in datebas: print('you can acess')
+
+
+6、list 函数
+可以拆分字符串
+x='hello'
+list(x)
+>>['h', 'e', 'l', 'l', 'o']
+
+
+
+7、修改列表
+（1）如果修改字符
+x='word'
+x=list(x)   -- 字符变成列表
+x[1]='a'     --  替换
+x=''.join(x)   -- 字符列表（如前述代码中的字符列表）转换为字符串，可使用下面的表达式：''.join(somelist) 
+print(x)     -- 打印
+（2）删除列表内的字符
+name=list('word')
+del name[2]     -- 删除
+name=''.join(name)
+print (name)
+（3）给切片赋值
+name=list('word')
+print(name)
+name[1:2]='ar'    -- 切片赋值
+print(name)
+name=''.join(name)
+print (name)
+>>['w', 'o', 'r', 'd']
+>>['w', 'a', 'r', 'r', 'd']
+>>warrd
+
+
+2.3.3 列表与方法  -- 方法不是函数，而且只能用于统计列表
+
+1、方法append用于将'一个对象'附加到列表末尾。
+
+name='ward'
+name=list(name)
+name.append(4)
+print(name)
+>>['w','a','r','d',4]
+
+2、clear 清除
+
+name='ward'
+name=list(name)
+name.clear()
+print(name)
+>>[]
+
+3、copy 复制
+a=name.copy()
+
+4、count 计算个数 ,只能统计列表中的字符
+b=name.count('a')
+
+5、extend   同时将多个值附加到列表末尾  ,与append的区别
+a=['a','c']
+b=['b']
+a.excend(b)
+>>['a','c','b']
+
+6、index
+方法index在列表中查找指定值第一次出现的索引  （但是没有这个值程序将报错）
+>>> knights = ['We', 'are', 'the', 'knights', 'who', 'say', 'ni']
+>>> knights.index('who')
+
+4 insert  方法insert用于将一个对象插入列表。
+
+name.insert(2,'w')
+print(name.insert(2,'w'))
+
+
+5、pop
+方法pop从列表中删除一个元素（末尾为最后一个元素），并返回这一元素。
+>>> x = [1, 2, 3]
+>>> x.pop()
+3
+
+
+6 remove  用于删除第一个为指定值的元素。
+name='warrd'
+name=list(name)
+name.remove('r')
+name=''.join(name)
+print(name)
+>>'ward'
+
+7、reverse
+方法reverse按相反的顺序排列列表中的元素
+>>> x = [1, 2, 3]
+>>> x.reverse()
+>>> x
+[3, 2, 1]
+
+
+8、sort
+方法sort用于对列表就地排序①。就地排序意味着对原来的列表进行修改
+>>> x = [4, 6, 2, 1, 7, 9]
+>>> x.sort()
+>>> x
+[1, 2, 4, 6, 7, 9]
+
+方法sort接受两个可选参数：key和reverse
+
+(1)reverse
+x = [4, 6, 2, 1, 7, 9]
+x.sort(reverse=True)
+>>[9, 7, 6, 4, 2, 1]
+
+(2)key
+x=['a','abc','ab']
+x.sort(key=len)
+print(x)
+['a', 'ab', 'abc']
+
+
+
+2.4 元组 （）使用逗号分隔  与列表[]要区分,元组是不能修改的
+
+3.1 字符串
+
+1、tuple 将一个序列作为参数，并将其转换为元组
+y=[43,34,55,89]
+print(tuple(y))
+>>(43, 34, 55, 89)
+
+
+2、%s   -- 转换说明符，指出了要将值插入什么地方
+>>> format = "Hello, %s. %s enough for ya?" 
+>>> values = ('world', 'Hot')
+>>> format %values 
+'Hello, world. Hot enough for ya?' 
+
+
+3、 {} .format 协助插入数据
+
+y="{1}hello{0}ye".format('k','n')
+print(y)
+>>nhellokye
+
+
+>>> print("{pi!s} {pi!r} {pi!a}".format(pi="π"))
+π 'π' '\u03c0'
+上述三个标志（s、r和a）指定分别使用str、repr和ascii进行转换。函数str通常创建外观
+普通的字符串版本（这里没有对输入字符串做任何处理）。函数repr尝试创建给定值的Python表
+示（这里是一个字符串字面量）。函数ascii创建只包含ASCII字符的表示
+
+
+y='{:$^19}'.format("yes")   -- 这里的^ 是让yes 居中，然后用$填充长度
+print(y)
+>>$$$$$$$$yes$$$$$$$$
+
+4、center  指定长度并让字符居中，可在两侧填充
+
+5、方法find在字符串中查找子串。如果找到，就返回子串的第一个字符的索引，否则返回-1。
+
+6、replace    -- 替换
+   split   -- 劈开
+
+llist=['wang+','rong+','wei+','nice']
+name=''.join(llist)
+name=name.replace('wang','rongwei')
+name=name.split('+')
+print(name)
+
+7、strip  删除开头结尾的空格、或指定字符
+
+8、translate  替换字符串的特定部分，但与replace不同的是它只能进行单字符替换。这个方法的优势在于能够同时替换多个字符
+
+
+4.1 章 字典
+
+1、创建字典
+
+方法一：
+k={}
+k[1]='wangrongwei'
+
+print(k)
+
+>> {'1','wangrongwei'}
+
+方法二：
+>>> items = [('name', 'Gumby'), ('age', 42)]
+>>> d = dict(items)
+>>> d
+{'age': 42, 'name': 'Gumby'} 
+
+方法三：
+直接写
+k={"11": 'wangrongwei', '22': 'rongbin'}
+
+
+2、清除字典
+
+
+k={"11": 'wangrongwei', '22': 'rongbin'}
+k.clear()
+
+
+3、方法fromkeys创建一个新字典，其中包含指定的键，且每个键对应的值都是None。
+
+ 
+>>> {}.fromkeys(['name', 'age'])
+{'age': None, 'name': None} 
+
+4、方法get为访问字典项提供了宽松的环境，当访问的key 没有时报none
+
+k={}
+print（k.get（'1'））
+>> None
+
+5、item   把字典拆成列表，但是ltem  顺序不固定，所以可以用sorted
+
+a_all={}  --  字段
+ sorted(a_all.items())[i]  
+
+
+6、setdefault返回指定的值并相应地更新字典
+
+7、update
+
+
+8、values
+
+
+9、list(zip(names, ages))
+
+将两个列表组合成一个列表
+[('anne', 12), ('beth', 45), ('george', 32), ('damon', 102)]
+
+
+
+
+
+134 页
+
+再谈抽象  7章
+
+
+
+
+
+
